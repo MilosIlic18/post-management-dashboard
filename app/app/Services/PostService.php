@@ -24,6 +24,13 @@ class PostService {
             ->get();
     }
 
+    public function getPostCountByTitle(){
+
+        return Post::select('title',DB::raw('COUNT(*) AS duplicate_count'))
+                    ->groupBy('title')
+                    ->get();
+    }
+
     public function updateStatus(int $postId){
         
         $post = Post::findOrFail($postId);
@@ -33,7 +40,7 @@ class PostService {
     }
 
     public function createPost(array $post){
+        
         return Post::create($post);
     }
-
 }

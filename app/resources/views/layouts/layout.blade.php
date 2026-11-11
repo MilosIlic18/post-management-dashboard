@@ -15,7 +15,7 @@
             <a href="{{ route('posts') }}" class="text-xl font-semibold cursor-pointer">
                 Postovi
             </a>
-            <a href="#" class="text-xl font-semibold cursor-pointer">
+            <a href="{{ route('group-posts') }}" class="text-xl font-semibold cursor-pointer">
                 Grupisani postovi
             </a>
         </div>

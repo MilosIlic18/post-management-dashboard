@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Posts\FilterPostRequest;
+use App\Http\Requests\Posts\StorePostRequest;
 use App\Http\Requests\Posts\UpdatePostRequest;
 use App\Services\PostService;
 
@@ -28,6 +29,12 @@ class PostController extends Controller
         $id = $updatePostRequest->validated()['id'];
         
         return $this->postService->updateStatus(postId: $id);
+    }
+
+    public function store(StorePostRequest $storePostRequest){
+
+        return collect($storePostRequest->validated())
+            ->map(fn($post) => $this->postService->createPost(post:$post));
     }
 
     public function statusCounts(){

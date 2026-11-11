@@ -27,7 +27,8 @@ Route::prefix('posts')
     ->controller(PostController::class)
     ->middleware('auth:sanctum')
     ->group(function () {
-        Route::get('/', 'index');
+        Route::get('', 'index');
+        Route::post('','store');
         Route::put('/{id}', 'edit');
         Route::get('/status-counts','statusCounts');
     
