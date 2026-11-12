@@ -1,10 +1,11 @@
 <?php
 
+use App\Livewire\Dashboard;
 use App\Livewire\Posts\PostGroupList;
 use App\Livewire\Posts\PostList;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',fn()=>"")->name('home');
+Route::get('/',Dashboard::class)->name('home');
 Route::get('/posts',PostList::class)->name('posts');
 Route::get('/group-posts',PostGroupList::class)->name('group-posts');
 

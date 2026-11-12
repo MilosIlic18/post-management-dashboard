@@ -31,5 +31,6 @@ Route::prefix('posts')
         Route::post('','store');
         Route::put('/{id}', 'edit');
         Route::get('/status-counts','statusCounts');
+        Route::get('/statistics', 'statistics');
     
 });

@@ -9,7 +9,7 @@
 <body>
      <div class="mb-6 px-[50px] py-[40px] flex gap-4 items-center justify-between bg-blue-400 text-[#fff]">
         <div class="flex gap-8">
-            <a href="#" class="text-xl font-semibold cursor-pointer">
+            <a href="{{ route('home') }}" class="text-xl font-semibold cursor-pointer">
                 Početna
             </a>
             <a href="{{ route('posts') }}" class="text-xl font-semibold cursor-pointer">

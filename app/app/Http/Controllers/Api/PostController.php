@@ -7,11 +7,13 @@ use App\Http\Requests\Posts\FilterPostRequest;
 use App\Http\Requests\Posts\StorePostRequest;
 use App\Http\Requests\Posts\UpdatePostRequest;
 use App\Services\PostService;
+use App\Services\StatisticsService;
 
 class PostController extends Controller
 {
     public function __construct(
-        protected PostService $postService
+        protected PostService $postService,
+        protected StatisticsService $statisticsService
     ) {}
 
     public function index(FilterPostRequest $filterPostRequest){
@@ -40,5 +42,10 @@ class PostController extends Controller
     public function statusCounts(){
 
         return $this->postService->getStatusCounts();
+    }
+
+    public function statistics(){
+
+        return $this->statisticsService->getStatisticsSnapshots();
     }
 }
